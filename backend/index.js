@@ -81,6 +81,17 @@ app.get("/:shortUrl", async (req, res) => {
   }
 });
 
+//handle delete all url
+app.delete("/url", async (req, res) => {
+  try {
+    const url = await Url.deleteMany({});
+    return res.json({ message: "All URL deleted" });
+  } catch (error) {
+    console.log(error);
+    res.send({ message: error.message });
+  }
+});
+
 mongoose
   .connect(process.env.MONGODB_URL)
   .then(() => {

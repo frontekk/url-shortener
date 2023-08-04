@@ -37,32 +37,37 @@ const ShowNewUrl = ({ originalUrl, newUrl }) => {
   };
 
   return (
-    <div className="container mx-auto bg-slate-300 w-full h-14 px-2 mt-3 rounded-lg flex flex-row justify-between items-center">
-      <div className="text-lg text-slate-500 overflow-hidden">
-        {truncatedText}
+    <div className="container mx-auto bg-slate-300 w-full h-14 px-2 mt-3 rounded-lg flex flex-row items-center">
+      {/* LINK */}
+      <div className="flex flex-row  w-5/6 items-center">
+        <div className="text-lg text-slate-500 overflow-hidden w-1/4">
+          {truncatedText}
+        </div>
+        <a
+          href={`https://url-shortener-tfec.onrender.com/${newUrl}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-lg text-gray-700 hover:text-blue-500"
+        >
+          {`https://url-shortener-tfec.onrender.com/${newUrl}`}
+        </a>
       </div>
-      <a
-        href={`https://url-shortener-tfec.onrender.com/${newUrl}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-lg text-gray-700"
-      >
-        {`https://url-shortener-tfec.onrender.com/${newUrl}`}
-      </a>
-      <div className="flex flex-row justify-between space-x-3 text-2xl">
+      {/* ICONS */}
+      <div className="flex flex-row justify-between space-x-4 text-2xl mx-auto">
         {/* <MdOutlineSettings className="cursor-pointer" /> */}
         <a
           href={`https://url-shortener-tfec.onrender.com/${newUrl}`}
           target="_blank"
           rel="noopener noreferrer"
         >
-          <MdOpenInNew className="cursor-pointer" />
+          <MdOpenInNew className="cursor-pointer hover:text-blue-500" />
         </a>
         <MdContentCopy
-          className="cursor-pointer"
+          className="cursor-pointer ml-auto hover:text-blue-500"
           onClick={handleCopyToClipboard}
         />
       </div>
+
       <ToastContainer />
     </div>
   );

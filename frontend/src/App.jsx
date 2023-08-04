@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import { SiConvertio } from "react-icons/si";
+import { FaTrashAlt } from "react-icons/fa";
 import axios from "axios";
 import ShowNewUrl from "./components/ShowNewUrl";
 import { ToastContainer, toast } from "react-toastify";
@@ -38,6 +39,18 @@ function App() {
       });
   };
 
+  //handle detele all url
+  const handleDeleteUrl = () => {
+    axios
+      .delete("http://url-shortener-tfec.onrender.com/url")
+      .then((response) => {
+        console.log("success");
+        setUrl("");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <>
       <div className="bg-gradient-to-t from-blue-900 to-blue-300 h-screen flex items-center justify-center font-customFont">
@@ -55,10 +68,16 @@ function App() {
               onChange={(e) => setUrl(e.target.value)}
             />
             <button
-              className="bg-red-400 px-2 hover:bg-red-700 py-1 rounded-tr-lg rounded-br-lg font-semibold shadow-md"
+              className="bg-red-400 px-2 hover:bg-red-700 py-1  font-semibold shadow-md"
               onClick={handleSaveUrl}
             >
               <SiConvertio className="w-16 h-16 hover:text-white" />
+            </button>
+            <button
+              className="bg-red-400 px-2 hover:bg-red-700 py-1 rounded-tr-lg rounded-br-lg font-semibold shadow-md"
+              onClick={handleDeleteUrl}
+            >
+              <FaTrashAlt className="w-16 h-16 hover:text-white" />
             </button>
           </div>
           {/* <ShowNewUrl /> */}
