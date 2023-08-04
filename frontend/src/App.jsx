@@ -21,6 +21,17 @@ function App() {
       progress: undefined,
       theme: "light",
     });
+  const notifydelete = () =>
+    toast.info("🦄 Wow so easy!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
 
   const handleSaveUrl = () => {
     if (!url) return notify();
@@ -46,6 +57,7 @@ function App() {
       .then((response) => {
         console.log("success");
         setUrl("");
+        notifydelete();
       })
       .catch((err) => {
         console.log(err);
