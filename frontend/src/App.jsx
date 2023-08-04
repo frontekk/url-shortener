@@ -27,7 +27,7 @@ function App() {
     const data = { url: completeUrl };
 
     axios
-      .post("http://localhost:5000/url", data)
+      .post("https://url-shortener-tfec.onrender.com/url", data)
       .then((response) => {
         console.log("success");
         setUrl("");

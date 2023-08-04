@@ -10,7 +10,7 @@ const ShowNewUrl = ({ originalUrl, newUrl }) => {
       ? originalUrl.slice(0, maxLength) + "..."
       : originalUrl;
 
-  const deployedBackendUrl = "http://localhost:5000"; // Replace this with the actual deployed backend URL
+  const deployedBackendUrl = "https://url-shortener-tfec.onrender.com"; // Replace this with the actual deployed backend URL
 
   const completeShortenedUrl = deployedBackendUrl + "/" + newUrl;
   const notify = () =>
