@@ -42,17 +42,17 @@ const ShowNewUrl = ({ originalUrl, newUrl }) => {
         {truncatedText}
       </div>
       <a
-        href={`http://localhost:5000/${newUrl}`}
+        href={`https://url-shortener-tfec.onrender.com/${newUrl}`}
         target="_blank"
         rel="noopener noreferrer"
         className="text-lg text-gray-700"
       >
-        {`http://localhost:5000/${newUrl}`}
+        {`https://url-shortener-tfec.onrender.com/${newUrl}`}
       </a>
       <div className="flex flex-row justify-between space-x-3 text-2xl">
         {/* <MdOutlineSettings className="cursor-pointer" /> */}
         <a
-          href={`http://localhost:5000/${newUrl}`}
+          href={`https://url-shortener-tfec.onrender.com/${newUrl}`}
           target="_blank"
           rel="noopener noreferrer"
         >
