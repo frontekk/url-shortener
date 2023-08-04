@@ -22,7 +22,7 @@ function App() {
       theme: "light",
     });
   const notifydelete = () =>
-    toast.info("🦄 Wow so easy!", {
+    toast.info("All URL deleted", {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
