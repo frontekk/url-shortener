@@ -42,7 +42,7 @@ function App() {
   //handle detele all url
   const handleDeleteUrl = () => {
     axios
-      .delete("http://url-shortener-tfec.onrender.com/url")
+      .delete("https://url-shortener-tfec.onrender.com/url")
       .then((response) => {
         console.log("success");
         setUrl("");
